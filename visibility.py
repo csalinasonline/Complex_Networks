@@ -77,11 +77,16 @@ def main():
     plt.figure(1)
     for edg in e:
         plt.plot(edg, [y[(edg[0])], y[(edg[1])]])
+    plt.show()
     
     plt.figure(2)
     nx.draw(g)
+    plt.show()
+    
     plt.figure(3)
     plt.hist(y)
+    plt.show()
+    
 if __name__ == "__main__":
     main()
     
