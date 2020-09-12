@@ -2,8 +2,6 @@
 
 This script allows the user to run a vsibility graph on data
 
-This tool accepts comma separated value files (.csv).
-
 This script requires requirements.txt.
 
 This file can also be imported as a module and contains the following
