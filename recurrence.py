@@ -12,9 +12,7 @@ functions:
 import math
 import numpy as np
 import matplotlib.pyplot as plt
-from visibility_graph import visibility_graph
 from pyts.image import RecurrencePlot
-from pyts.datasets import load_gunpoint
 from collections import deque
 
 N = 100
