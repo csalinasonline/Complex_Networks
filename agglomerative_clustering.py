@@ -1,0 +1,50 @@
+"""Agglomerative Clustering Plots Script
+
+This script allows the user to run a Agglomerative Clustering plots on data
+
+This script requires requirements.txt.
+
+This file can also be imported as a module and contains the following
+functions:
+
+    * main - the main function of the script
+"""
+import numpy as np
+import matplotlib.pyplot as plt
+from dtaidistance import dtw
+from dtaidistance import clustering
+import dtaidistance.dtw_visualisation as dtwvis
+
+def main():
+    s = np.array([
+         [0., 0, 1, 2, 1, 0, 1, 0, 0],
+         [0., 1, 2, 0, 0, 0, 0, 0, 0],
+         [1., 2, 0, 0, 0, 0, 0, 1, 1],
+         [0., 0, 1, 2, 1, 0, 1, 0, 0],
+         [0., 1, 2, 0, 0, 0, 0, 0, 0],
+         [1., 2, 0, 0, 0, 0, 0, 1, 1],
+         [1., 2, 0, 0, 0, 0, 0, 1, 1]])
+    
+## Custom Hierarchical clustering
+#model1 = clustering.Hierarchical(dtw.distance_matrix_fast, {})
+#cluster_idx = model1.fit(timeseries)
+## Keep track of full tree by using the HierarchicalTree wrapper class
+#model2 = clustering.HierarchicalTree(model1)
+#cluster_idx = model2.fit(timeseries)
+## You can also pass keyword arguments identical to instantiate a Hierarchical object
+#model2 = clustering.HierarchicalTree(dists_fun=dtw.distance_matrix_fast, dists_options={})
+#cluster_idx = model2.fit(timeseries)
+## SciPy linkage clustering
+#model3 = clustering.LinkageTree(dtw.distance_matrix_fast, {})
+#cluster_idx = model3.fit(timeseries)
+#
+#model2.plot("hierarchy.png")
+#
+#fig, ax = plt.subplots(nrows=1, ncols=2, figsize=(10, 10))
+#show_ts_label = lambda idx: "ts-" + str(idx)
+#model.plot("hierarchy.png", axes=ax, show_ts_label=show_ts_label,
+#           show_tr_label=True, ts_label_margin=-10,
+#           ts_left_margin=10, ts_sample_length=1)
+    
+if __name__ == "__main__":
+    main()
