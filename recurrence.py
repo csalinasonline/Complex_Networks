@@ -10,6 +10,7 @@ functions:
     * main - the main function of the script
 """
 import math
+import time
 import numpy as np
 import matplotlib.pyplot as plt
 from pyts.image import RecurrencePlot
@@ -87,10 +88,18 @@ def main():
     plt.show()
     
     plt.figure(2)
-    plt.imshow(X_rp[0], cmap='binary', origin='lower')
-    plt.title('Recurrence Plot', fontsize=16)
-    plt.tight_layout()    
-    plt.show()
+    for idx, _ in enumerate(series):
+        plt.clf()
+        plt.subplot(211)
+        plt.imshow(X_rp[idx], cmap='binary', origin='lower')
+        plt.title('Recurrence Plot ' + str(idx), fontsize=16)
+        plt.tight_layout()    
+        plt.subplot(212)
+        plt.plot(series)
+        plt.scatter(idx,series[idx])
+        plt.tight_layout()  
+        plt.show()
+        time.sleep(0.1)
     
     plt.figure(3)
     plt.hist(series)
