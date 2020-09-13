@@ -1,6 +1,6 @@
 """Gramian Angular Field Plots Script
 
-This script allows the user to run a recurrence plots on data
+This script allows the user to run a gramain angular field plots on data
 
 This script requires requirements.txt.
 
@@ -78,7 +78,7 @@ def main():
         X.append(list(d_list))
         i = i + 1
     
-    # Recurrence plot transformation
+    # GramianAngularField plot transformation
     X_num = np.squeeze(np.array(X))
     transformer = GramianAngularField()
     X_new = transformer.transform(X_num)      
