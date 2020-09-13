@@ -1,5 +1,4 @@
-# Complex_Networks
-Timeseries Analysis
+# Timeseries Analysis
 
 ## Summary
 A sandbox for time series experiments.
