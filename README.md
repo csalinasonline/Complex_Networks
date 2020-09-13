@@ -4,6 +4,12 @@ Timeseries Analysis
 ## Summary
 A sandbox for time series experiments.
 
+## Installation
+    $ pip install -r requirements.txt
+    
+## Use
+    $ python xxx.py
+
 ### Timeseries to complex networks
 1. Visibility Graphs. COMPLETE
 
