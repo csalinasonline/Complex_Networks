@@ -44,7 +44,7 @@ def main():
     #series = tan(samples)    
     
     # normal
-    series = np.random.normal(loc=6, scale=0.1, size=(N,1))
+    #series = np.random.normal(loc=6, scale=0.1, size=(N,1))
     # binomial
     #series = np.random.binomial(n=10, p=0.7, size=(N,1))
     # Poisson
@@ -54,7 +54,7 @@ def main():
     # Logistic
     #series = np.random.logistic(loc=1, scale=2, size=(N, 1))
     # Multi
-    #series = np.random.multinomial(n=6, pvals=[1/6, 1/6, 1/6, 1/6, 1/6, 1/6])
+    series = np.random.multinomial(n=6, pvals=[1/6, 1/6, 1/6, 1/6, 1/6, 1/6])
     # Exponential
     #series = np.random.exponential(scale=2, size=(N, 1))
     # Chi
@@ -66,8 +66,31 @@ def main():
     # Zipf
     #series = np.random.zipf(a=2, size=(N, 1))
     
-    G = nx.Graph()
     g = visibility_graph(series)
+    # Circular
+    #pos = nx.circular_layout(g)
+    # Bipartite
+    #top = nx.bipartite.sets(g)[0]
+    #pos = nx.bipartite_layout(g, top)   
+    # Kamada Kawai
+    #pos = nx.kamada_kawai_layout(g)
+    # Planar
+    #pos = nx.planar_layout(g)
+    # Random
+    #pos = nx.random_layout(g) 
+    # Shell
+    shells = [[0], list(np.arange(1, len(g), 1))]
+    pos = nx.shell_layout(g, shells)
+    # Spring
+    #pos = nx.spring_layout(g) 
+    # Spectral
+    #pos = nx.spectral_layout(g)    
+    # Spiral
+    #pos = nx.spiral_layout(g)
+    # Multipartite
+    #pos = nx.multipartite_layout(g)
+        
+    
     print(g.nodes())
     print(g.edges())
     x = list(g.nodes())
@@ -80,7 +103,9 @@ def main():
     plt.show()
     
     plt.figure(2)
-    nx.draw(g)
+    nx.draw(g,pos)
+    #nx.draw_networkx_labels(g,pos,font_size=7,font_family='sans-serif')
+    #nx.draw_networkx_edge_labels(g,pos,q_list,label_pos=0.3)
     plt.show()
     
     plt.figure(3)
